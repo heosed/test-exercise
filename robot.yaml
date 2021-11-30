@@ -1,0 +1,9 @@
+tasks:
+  Run Python:
+    shell: python main.py
+
+condaConfigFile: conda.yaml
+PATH:
+  - .
+PYTHONPATH:
+  - .

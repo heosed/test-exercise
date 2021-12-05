@@ -24,7 +24,6 @@ def main():
         open_the_website(url)
         click_on_dive_in()
         agencies = get_all_agencies()
-        print(agencies)
         table, link = get_agency_info(Agency_Name, agencies)
         links = download_pdfs(table, link)
         compare_pdfs(table, links)
@@ -47,8 +46,8 @@ def click_on_dive_in():
 
 def get_all_agencies():
     print("Scraping agencies.....")
-    columnlocator = 'xpath://*[@id="agency-tiles-widget"]'
-    browser_lib.wait_until_page_contains_element(columnlocator, timeout=20)
+    columnlocator = "xpath://div[@*='agency-tiles-container']"
+    browser_lib.wait_until_element_is_visible(columnlocator, timeout=20)
     colums = browser_lib.get_webelement(
         columnlocator).find_elements_by_class_name('col-sm-12')
     agencies = {}

@@ -26,15 +26,15 @@ def main():
         agencies = get_all_agencies()
         table, link = get_agency_info(Agency_Name, agencies)
         links = download_pdfs(table, link)
-        # create_xlsx(table,agencies)
         compare_pdfs(table, links)
+        create_xlsx(table,agencies)
 
     finally:
         browser_lib.close_all_browsers()
 
 
 def open_the_website(url):
-    browser_lib.open_available_browser(url)
+    browser_lib.open_available_browser(url, headless = True)
     print(f"Opened page {url}.....")
 
 

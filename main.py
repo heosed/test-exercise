@@ -132,8 +132,8 @@ def download_pdfs(tables, link):
     for index, link in enumerate(links):
         try:
             browser_lib.go_to(link)
-            browser_lib.wait_until_page_contains_element(
-                "class:row.sameHeight", timeout=10)
+            browser_lib.wait_until_element_is_visible(
+                "id:business-case-pdf", timeout=10)
             browser_lib.get_webelement("id:business-case-pdf").click()
             wait_download = True
             while wait_download:

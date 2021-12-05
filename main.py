@@ -24,6 +24,7 @@ def main():
         open_the_website(url)
         click_on_dive_in()
         agencies = get_all_agencies()
+        print(agencies)
         table, link = get_agency_info(Agency_Name, agencies)
         links = download_pdfs(table, link)
         compare_pdfs(table, links)
